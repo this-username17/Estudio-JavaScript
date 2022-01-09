@@ -1,0 +1,654 @@
+<!-- APUNTES JAVASCRIPT  -->
+
+<!-- FORMA ESTRUCTURAL DE UN HTML -->
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <title>Document</title>
+</head>
+<body>
+    <!-- HOLA MUNDO -->
+    <script>
+        alert("Hola mundo");
+    </script>
+    
+    <!-- INSERTAR ARCHIVO JS EN UN HTML -->
+    <script src="js/01-app.js"></script>
+
+    <!-- INPUT COMO UN ALERT -->
+        <!-- 
+        const nombre = prompt("¿Cual es tu nombre?");
+        alert(`Hola ${nombre}`);
+
+         -->
+    <!-- CONSOLA DE JAVASCRIPT: EN EL NAVEGADOR 
+         Para que aparezca en consola se usa console.log-->
+
+    <!-- ESLint ERRORES DE CÓDIGO -->
+
+    <!-- VARIABLES  -->
+        <!-- 
+        VARIABLES CON VAR
+        var PRODUCTO = "Monitor de 24 pulgadas";
+        var precio = 300;
+        producto = "Monitor de 27 pulgadas"; varía el valor de la variable.
+
+        múltiples variables:
+
+        var a=1, 
+            b=2, 
+            c=3; se cierra con punto y coma.
+
+        sintaxis de las variables:
+
+        no se pueden iniciar con números.
+        no se pueden iniciar con caracteres especiales, excepto con guión bajo.
+        no se pueden iniciar con espacios.
+
+        VARIABLES CON LET
+            su scope solo funciona dentro de su bloque.
+        let producto = "Monitor de 24 pulgadas";
+        -->
+
+     <!-- CONSTANTES -->
+        <!-- 
+        Deben tener un valor para poder usuarlas
+        const producto = "Monitor de 24 pulgadas";
+        const precio = 300;
+        producto = "Monitor de 27 pulgadas"; no varía el valor de la constante.
+        -->
+    <!-- STRINGS -->
+        <!-- 
+        String: es una cadena de texto.
+        const producto = "Monitor de 24 pulgadas";
+        const producto2= String('Monitor de 27 pulgadas');
+
+        escapar las comillas:  --- const producto = "Monitor de 24\""; con el slash.
+
+        Métodos includes y length:
+            producto.includes("24"); da true o false, dependiendo si incluye el texto o no.
+            producto.length; cantidad de letras de la cadena de texto
+            producto.indexOf("24"); da la posición de la primera letra o caracter.
+            producto.substring(0,3); da la subcadena de texto.
+
+        Concatenar strings:
+            producto.concat("Monitor de 27 pulgadas"); 
+            la variable producto se concatena con el texto.
+
+            template strings: con comillas invertidas y ${}
+            `el producto ${variable} es muy bueno`
+
+        Para eliminar espacios en blanco de un String al inicio y al final:
+            producto.trimStart();
+            producto.trimEnd();
+            producto.trimStart().trimEnd(); si se quiere eliminar los espacios en 
+            blanco del inicio y final.
+
+        Reemplazar palabras en las cadenas de texto:
+            producto.replace("pulgadas", '"');
+
+        Cortar palabras en las cadenas de texto:
+            producto.slice(0,3);
+
+        Subcadenas:
+            producto.substring(0,3); da la subcadena de texto.
+
+        Un caracter en especifico:
+            producto.charAt(0); da el caracter en la posición 0.
+
+        Tamaño de una cadena de texto:
+            producto.length;
+
+        Repeat y Split
+            producto.repeat(3); Se repite la cadena de texto 3 veces.
+            producto.split(","); Separa la cadena de texto por comas.
+             producto.split(" "); Separa la cadena de texto por espacios.
+
+        Todo en mayúsculas:
+            produto.toUpperCase();
+
+        Todo en minúsculas:
+            produto.toLowerCase();
+        -->
+    <!-- 
+    NÚMEROS EN JAVASCRIPT 
+
+        Declaración de números:
+            const numero = -10;
+            const numero2 = 10.5;
+            const numero3 = 0xFF;
+            const numero4 = 0b1010;
+            const numero5 = 0o744;
+            const numero6 = Number("10");
+            const numero7 = Number("10.5");
+            const numero8 = Number("0xFF");
+            const numero9 = Number("0b1010");
+            const numero10 = Number("0o744");
+    
+        Para convertir un número a un string:
+            numero.toString();
+            numero.toString(2);
+            numero.toString(8);
+            numero.toString(16);
+            numero.toString(36);
+        
+        Operaciones con números:
+            resultado = numero + numero2;
+            resultado = numero - numero2;
+            resultado = numero * numero2;
+            resultado = numero / numero2;
+            resultado = numero % numero2;
+
+        Objeto Math
+
+            var numero = 10.9;
+            redondeo = Math.round(numero); // lo redondea al entero más cercano.
+            redondeo = Math.floor(numero); // lo redondea al entero más cercano.
+
+            Redondea hacia arriba:
+                redondeo = Math.ceil(numero);
+
+            Redondea hacia abajo:
+                redondeo = Math.floor(numero);
+
+            Raíz cuadrada:
+                raiz = Math.sqrt(numero);
+
+            Potencia:
+                potencia = Math.pow(numero, 2); elevada el número al cuadrado. 
+
+            Minimo:
+                minimo = Math.min(numero, numero2); el número más pequeño.
+
+            Máximo:	
+                maximo = Math.max(numero, numero2); el número más grande.
+
+            Aleatorio: 
+                Math.random(); da un número aleatorio entre 0 y 1. 
+                Se puede multiplicar por un número para que sea más grande.
+
+                resultado = Math.floor(Math.random() * 20; 
+                    Para que dé un número entero y entre el 0 y 20.
+            
+            Incrementos o decrementos:
+                numero++;
+                ++numero;
+                --numero;
+                numero--;
+                numero += 2; numero = numero + 2;
+                numero -= 2; numero = numero - 2;
+                numero *= 2; numero = numero * 2;
+                numero *= 2; numero = numero * 2;
+                numero /= 2;
+                numero %= 2;
+
+        Convertir String a Números:
+            numero = Number(cadena);
+            numero = Number.parseInt(cadena);
+            numero = parseInt(cadena);
+
+            numero = parseFloat(cadena); 
+        Revisar si un número es entero:
+            numero.isInteger();	
+
+    
+    -->
+
+    <!-- 
+    OPERADODORES DE COMPARACIÓN : arrojan true o false
+
+        Igualdad:
+            numero == numero2; compara si son iguales, sin importar el tipo de dato.
+            numero === numero2; // OPERADOR ESTRICTO, compara el tipo de dato.
+            numero != numero2; diferente.
+            numero !== numero2; diferente estricto
+            numero === parseInt(numero2); si numero 2 es una cadena, lo convierte a número 
+            y si puede dar true aunque sean distintos datos.
+
+        Mayor que:
+            numero > numero2;
+            numero >= numero2;
+        
+        Menor que:
+            numero < numero2;
+            numero <= numero2;
+        
+        Operadores lógicos:
+            && (AND)
+            || (OR)
+            ! (NOT)
+            !(numero == numero2);
+            !(numero === numero2);
+            !(numero != numero2);
+            !(numero !== numero2); // diferente estricto
+            !(numero > numero2);
+            !(numero >= numero2);
+            !(numero < numero2);
+            !(numero <= numero2);
+            
+        Comparar Null y undefined:
+            un valor es null si no tiene un valor, o undefined si no se ha asignado un valor.
+            null === undefined; // false
+            null == undefined; // true
+            null == null; // true
+            undefined == undefined; // true
+            undefined === undefined; // true
+-->
+
+    <!-- 
+    
+    BOOLEANOS
+        
+        True: si el valor es verdadero.
+        False: si el valor es falso.
+        Se pueden comparar con los operadores de comparación.
+            const boolean1 = true;
+            const boolean2 = false;
+            const boolean3 = Boolean(cadena); //estudiar ESTO
+
+            boolean1 == true; true
+            boolean1 === "true"; false
+        
+        if(boolean1){
+            console.log("Es verdadero");
+        else{
+            console.log("Es falso");
+        }
+        Operador ternario
+        
+        const resultado = boolean1 ? "Verdadero" : "Falso";
+    -->
+
+    <!-- OBJETOS EN JAVASCRIPT
+        Un objeto agrupa todo en una sola variable
+        const nombre = "Juan";
+        const apellido = "Perez";
+        const edad = 30;
+
+            CREAR OBJETO
+                Object literal
+                    const persona = {
+                        nombre: "Juan", // nombre: valor OPERADOR DE ASIGNACIÓN SON DOS PUNTOS
+                        apellido: "Perez",
+                        edad: 30,
+
+                        persona.nombre; // Juan
+                        persona.apellido; // Perez
+                        persona.edad; // 30
+                        persona[ 'nombre' ]; // Juan
+
+            AGREGAR O ELIMINAR PROPIEDADES
+                agregar:
+                    persona.direccion = "Calle falsa 123";
+                borrar:
+                    delete persona.nombre;
+            
+            DESTRUCTURING DE OBJETOS
+            Crea una variable con el nombre de la propiedad y luego acceder a ella.
+                Es esto: 
+                    const nombre = persona.nombre; // Juan
+                Pero se hace así:
+                    const {nombre} = persona; // Juan
+                    console.log(nombre); // Juan
+                    const {nombre, apellido, edad} = persona; // salen las tres variables
+                    console.log(nombre, apellido, edad); // Juan Perez 30
+
+            OBJETO DENTRO DE OBJETOS
+
+            const persona = {
+                nombre: "Juan",
+                apellido: "Perez",
+                edad: 30,
+                direccion: {
+                    pais: {
+                        nombrePais: "México",
+                        codigo: "MX"
+                        ciudad: "CDMX"
+                    },
+                    calle: "Calle falsa 123"
+                }
+            }
+            console.log(persona.direccion.pais.nombre); // Mexico
+            console.log(persona.direccion.calle); // Calle falsa 123
+
+                Para acceder a la propiedad anidada:
+                persona.direccion.ciudad; // Ciudad de México
+                persona.direccion["ciudad"]; // Ciudad de México
+                persona["direccion"]["ciudad"]; // Ciudad de México
+
+                DESTRUCTURING DE OBJETOS ANIDADOS
+                    const {nombre, apellido, edad, direccion: {pais: {nombre: nombrePais}}} = persona;
+
+            MÉTODOS PARA LOS OBJETOS
+                    "use strict"; // para que no se puedan usar variables no definidas y usar
+                    métodos de objetos.
+
+                CONGELAR OBJETO PARA NO PODERLO MODIFICAR
+                    Object.freeze(persona); // Congela el objeto para que no pueda ser modificado.
+                    persona.nombre = "Pedro"; // No se puede modificar el nombre.
+
+                SELLAR OBJETO
+                    Se puede modificar lo que existe pero no se puede agregar ni eliminar propiedades.
+                    Object.seal(persona); // Se sella el objeto para que no pueda ser agregado ni eliminado.
+                    persona.nombre = "Pedro"; // Se puede modificar el nombre.
+                    persona.direccion = "Calle falsa 123"; // No se puede agregar la propiedad.
+                
+                UNIR DOS OBJETOS
+
+                    const persona2 = {
+                        nombre: "Pedro",
+                        apellido: "Perez",
+                        edad: 30,
+                      }
+                    
+                    const resultado = Object.assign(persona, persona2); // persona2 se agrega a persona.  
+                      Se mezclan las propiedades de ambos objetos.
+
+                    const resultado2 = {...persona, ...persona2}; // persona2 se agrega a persona.  
+                      Se mezclan las propiedades de ambos objetos.
+
+                KEYS
+                    Object.keys(persona); // Devuelve un array con LOS NOMBRES DE LAS propiedades del objeto.   
+                    Object.keys(persona).forEach(function(key){
+                        console.log(key); // nombre, apellido, edad, direccion
+                    });
+                VALUES
+                    Object.values(persona); // Devuelve un array con los VALORES de las propiedades del objeto.
+                    Object.values(persona).forEach(function(value){ 
+                        console.log(value); // Pedro, Perez, 30, Calle falsa 123
+                    });
+                ENTRIES
+                    Object.entries(persona); // Devuelve un array con las propiedades y valores del objeto.
+                    Object.entries(persona).forEach(function([key, value]){
+                        console.log(key, value); // nombre, Pedro, apellido, Perez, edad, 30, direccion, Calle falsa 123
+                    });
+                    
+            FUNCIONES EN OBJETOS
+                    const persona3 = {
+                    nombre: "Pedro",
+                    apellido: "Perez",
+                    edad: 30,
+                    (nombre función) saludar: function(){ //contenido de la función
+                        console.log("Hola" + this.nombre);
+                        }
+                    }
+                    persona3.saludar(); // Hola Pedro
+
+            OBJECT CONSTRUCTOR
+                function Persona(nombre, apellido, edad){
+                    this.nombre = nombre;
+                    this.apellido = apellido;
+                    this.edad = edad;
+                }
+                const persona4 = new Persona("Pedro", "Perez", 30);
+    CLASES - ESTUDIAR
+
+
+    ARRAYS EN JAVASCRIPT
+        Agrupar datos en una sola variable mediantes indices (keys) o posición
+        Puede ser un array de objetos, un array de strings, un array de números, etc.
+        const varios = ["Pedro","Perez", 30, "Calle falsa 123", true];
+        const arreglo = [1, 2, 3, 4, 5];
+        const meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo");
+        const matriz = [[1,2,3],[4,5,6],[7,8,9]];
+
+        ACCEDER A LOS ELEMENTOS DEL ARRAY
+                console.log(varios[0]); // Pedro
+                console.log(varios[1]); // Perez
+                console.log(matriz[0][0]); // 1
+                console.log(matriz[2][1]); // 8
+
+        MEDIR UN ARRAY
+            matriz.length; // 3
+
+        RECORRER UN ARRAY
+            for(let i = 0; i < varios.length; i++){
+                console.log(varios[i]);
+            }
+            RECORRER UN ARRAY CON FOR EACH  (ESTA FORMA ES LA MEJOR)
+                varios.forEach(function(elemento){
+                    console.log(elemento);
+                });
+           
+            RECORRER UN ARRAY CON FOR OF Y FOR IN
+                for(let elemento of varios){
+                    console.log(elemento);
+                }
+                for(let i in varios){
+                    console.log(i);
+                }
+
+                RECORRER UN OBJETO CON FOR OF Y FOR IN
+                for (let [llave, valor] of Object.entries(persona)){
+                    console.log(llave); // nombre, apellido, edad, direccion
+                    console.log(valor); // Pedro, Perez, 30, Calle falsa 123
+                }
+                for (let llave in persona){
+                    console.log(llave); // nombre, apellido, edad, direccion
+                }
+        AGREGAR ELEMENTOS AL ARRAY
+                meses[1] = "Segundo mes"; // Cambia el valor de la posición 1 
+                meses[5] = "Último mes"; // Agrega un elemento en esa posición
+
+        ANADIR ELEMENTOS AL INICIO Y FINAL DEL ARRAY
+                meses.unshift("Primer mes"); // Agrega un elemento al inicio del array
+                meses.push("Último mes"); // Agrega un elemento al final del array
+
+        CREAR UN NUEVO ARRAY CON SPREAD OPERATOR
+            const profesores = [persona, persona1, persona2, persona3];
+            const profesores2 = [...profesores, "persona4"]; // 
+                Crea un nuevo array con los elementos del array profesores y puede agregar otro elemento
+                    sin agregarlo al array inicial.
+                Funciones declarativas (...) no muta el array original. la imperativa sí
+        ELIMINAR ELEMENTOS DEL ARRAY CON SPLICE
+                Eliminar un elemento del array
+                    profesores.splice(1, 1); // Elimina el elemento en la posición 1
+                    profesores.splice(1, 2); // Elimina los dos elementos desde la posición 1
+
+                Eliminar todos los elementos del array
+                    profesores.splice(0, profesores.length); 
+                        // Elimina todos los elementos del array
+
+                Eliminar elementos del array con pop
+                    profesores.pop(); // Elimina el último elemento del array
+
+                Eliminar elementos del array con shift
+
+                    profesores.shift(); // Elimina el primer elemento del array
+
+        DESTRUCTURING DE ARRAYS
+        const [profesor1, profesor2, profesor3] = profesores
+                //asigna variables a cada elemento del array
+                profesor1 = profesores[0];
+        const [, profesor2, profesor3] = profesores // antes de la coma deja vacía la posición 0
+        const [profesor1, ...profesores1] = profesores // 
+            desestructura el array y crea un nuevo array con los elementos restantes
+        
+        .FOR EACH PARA ITERAR UN ARRAY
+            profesores.forEach(function(profesor){
+                console.log(profesor);
+            });
+
+        .MAP PARA ITERAR UN ARRAY
+            const nombres = profesores.map(function(profesor){
+                return profesor.nombre;
+            }); //crea un nuevo array con los nombres de los profesores
+            va a retornar un nuevo array con elementos de la siguiente forma:
+                ["Pedro", "Juan", "Maria", "Pedro"]
+
+        .FILTER PARA ITERAR UN ARRAY
+            const profesoresFiltrados = profesores.filter(function(profesor){
+                return profesor.edad > 30;
+            }); // crea un nuevo array con los profesores mayores de 30 años
+            va a retornar un nuevo array con elementos de la siguiente forma:
+                [{nombre: "Pedro", apellido: "Perez", edad: 30}, {nombre: "Juan", apellido: "Perez", edad: 40}]
+            
+    FUNCIONES EN JAVASCRIPT
+        Declaración de función
+            function nombreFuncion(parametros){
+                // código
+            }
+        Expresión de función (Function Expression)
+            const nombreFuncion = function(parametros){
+                // código
+            }
+        Diferencias: 
+            - Las funciones declarativas (function nombreFuncion(parametros){})
+                se ejecutan al momento de ser llamadas. Pueden ser llamadas antes o después de la declaración.
+            - Las funciones expresivas (const nombreFuncion = function(parametros){})
+                se ejecutan al momento de ser declaradas. 
+                Como se declara como variable se ejecuta al momento de ser declarada y no antes.
+        
+        Diferencia entre funciones y métodos:
+            - Las funciones no tienen this.
+            - Los métodos tienen this.
+            - Las funciones no pueden ser heredadas.
+            - Los métodos pueden ser heredadas.
+            - Las funciones no pueden ser llamadas como métodos.
+            - Los métodos pueden ser llamados como métodos.
+        
+        Paramétros y argumentos en una función
+            Parámetros:
+                - Son los conceptos que espera la función para ejecutarse.
+                - Se definen con los paréntesis.
+                - Se separan con comas.
+                    Parámetros por default:
+                        function nombreFuncion(parametro = "valor por default"){
+                            // código
+                        }
+            Argumentos:
+                - Son los valores que se pasan a la función.
+                - Los recibe la función al momento de ejecutarse.
+            
+        Cómo se comunican las funciones:
+             Se llaman unas con otras, se colocan entre la función que se va a ejecutar
+
+        Retornando valores
+         Retorna un valor con la palabra return
+        
+         Añadir funciones a un objeto
+         const persona4 = {
+            nombre: "Pedro",
+            apellido: "Perez",
+            edad: 30,
+            saludar: function(){
+                return "Hola, soy " + this.nombre;
+            }
+            persona4.saludar(); // "Hola, soy Pedro"
+            Se pueden crear funciones de un objeto por fuera de este
+            persona4.despedirse = function(){
+                return "Adiós, soy " + this.nombre;
+            }
+        
+        Arrow functions
+        Otra forma de declarar funciones y es más corta
+            const nombreFuncion = (parametros) => { // cuando es un solo parametro el 
+                parentesis es opcional y las llaves también y solo tienes una linea de código
+                // código
+            }
+            const nombreFuncion = (parametros) => valor;
+            const sumar = (a, b) => a + b;
+
+            con un forEach y un map
+               const array = profesores.map((profesor) => {
+                    return profesor.nombre;
+                });
+                const array = profesores.forEach((profesor) => {
+                      console.log(profesor.nombre);
+                 });
+    
+    ESTRUCTURAS DE CONTROL
+    CONDICIONALES
+        if (condición) {
+            // código
+        } else if (condición) {
+            // código
+        } else {
+            // código
+        }
+        Switch
+        switch (variable) {
+            case valor de la variable:
+                // código
+                break;
+            case valor de la variable:
+                // código
+                break;
+            default:
+                // código
+                break;
+        }
+        Operador ternario
+        condición ? valor si es verdadero : valor si es falso;
+        condicion && condicion && condicion ? valor si es verdadero : valor si es falso;
+            // se puede usar más de una condición
+        
+    CICLOS
+        for (let i = 0; i < 10; i++) {
+            // código
+        }
+
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                continue; // instrucción que salta al siguiente ciclo
+            }
+            if (i === 8) {
+                break; // instrucción que termina el ciclo
+            }
+            // código
+
+        }
+        While:
+
+        while (condición) {
+            // código
+        }
+
+        Do While: 
+
+        do {
+            // código
+        } while (condición);
+        
+        Fizz Buzz
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("Fizz Buzz");
+            } else if (i % 3 === 0) {
+                console.log("Fizz");
+            } else if (i % 5 === 0) {
+                console.log("Buzz");
+            } else {
+                console.log(i);
+            }
+        }     
+
+    ARRAY'S METHODS
+        .some()
+            // comprueba si algún elemento de un array cumple con la condición
+            const array = [1, 2, 3, 4, 5];
+            const resultado = array.some(function(elemento){
+                return elemento > 3;
+            });
+        .every()    
+        .filter()
+        .findIndex()
+        .reduce()
+        .concat()
+        Spread Operator
+
+    -->
+        <script>
+            var nombre = "Juan";
+            var apellido = "Perez";
+            var edad = 23;
+            var texto = "Hola " + nombre + " " + apellido + " (" + edad + ")";
+            console.log(texto);
+            var a = 1101 + 110;
+            console.log(a)
+        </script>
+
+</body>
+</html>
+
